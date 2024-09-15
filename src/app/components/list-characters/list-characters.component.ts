@@ -8,6 +8,7 @@ import { Character } from 'src/app/models/character.model';
 })
 export class ListCharactersComponent {
   @Input() charactersList: Character[] = [];
+
   @Output() loadNextPage = new EventEmitter();
 
   onScroll(event: any): void {
@@ -16,7 +17,6 @@ export class ListCharactersComponent {
     const nearBottom = element.scrollHeight - element.scrollTop <= element.clientHeight * 1.5;
 
     if (nearBottom) {
-      console.log('nearBottom');
       this.loadNextPage.emit();
     }
   }

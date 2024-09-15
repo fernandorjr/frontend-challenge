@@ -25,23 +25,34 @@ export class HomeComponent implements OnInit {
 
     this.isLoading = true;
 
-    this.api.getAllCharecter(url).subscribe(
-      (response) => {
+    this.api.getAllCharecter(url).subscribe({
+      next: (response) => {
         this.pageInfo = response.info;
         this.charactersList = [...this.charactersList, ...response.results];
 
         this.isLoading = false;
       },
-      (error) => {
+      error: (error) => {
         this.isLoading = false;
-      }
-    );
+      },
+    });
   }
 
-  characterFilers(name: string) {
-    this.api.getCharacterByName(name).subscribe((data: any) => {
-      this.pageInfo = data.info;
-      this.charactersList = data.results;
+  handleSearch(name: string) {
+    if (name === '') {
+      this.loadCharacters();
+      return;
+    }
+
+    this.api.getCharacterByName(name).subscribe({
+      next: (response) => {
+        this.pageInfo = response.info;
+        this.charactersList = response.results;
+      },
+      error: (error) => {
+        this.charactersList = [];
+        console.error(error);
+      },
     });
   }
 

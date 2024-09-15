@@ -1,4 +1,4 @@
-<app-header-pages title="Início" [inptFilter]="true"></app-header-pages>
+<app-header-pages title="Início" [inptSearch]="true" (searchCharacter)="handleSearch($event)"></app-header-pages>
 
 <div *ngIf="isLoading && currentPage == 1; else content">
   <!-- Componente de Loading (pode ser um spinner, texto ou qualquer outro indicativo de carregamento) -->
