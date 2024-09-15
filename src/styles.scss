@@ -1,1 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --font-family-default: 'Poppins', sans-serif !important;
+  --font-family-creepster: 'Creepster', system-ui !important;
+
+  --color-core-foreground: #0A0A0A;
+  --color-core-background: #1F1F1F;
+  --color-core-border: #3D3D3D;
+  --color-neutral-content-onSource: #0A0A0A;
+  --color-neutral-content: #A4A4A4;
+  --color-neutral-surface: #FFFFFF;
+
+  --sizing-xxxs: 14px;
+  --sizing-xxs: 16px;
+  --sizing-xs: 18px;
+  --sizing-s: 20px;
+  --sizing-m: 24px;
+  --sizing-l: 28px;
+  --sizing-xl: 32px;
+  --sizing-xxl: 40px;
+  --sizing-xxxl: 48px;
+
+  --border-radius-xxs: 4px;
+  --border-radius-xs: 8px;
+  --border-radius-s: 12px;
+  --border-radius-m: 16px;
+  --border-radius-l: 24px;
+  --border-radius-xl: 32px;
+  --border-radius-circle: 100%;
+  --border-radius-pill: 9999px;
+
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-900: 900;
+
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 12px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 40px;
+  --spacing-xxxl: 48px;
+
+  --header-height: 64px;
+  --page-height: calc(100vh - var(--header-height));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-default);
+}
+
+/* Define um estilo padrão para o body */
+body {
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+/* Remove as decorações padrão de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove bullets das listas */
+ul, ol {
+  list-style: none;
+}
