@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { ComponentsModule } from '../components/components.module';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -10,7 +10,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  declarations: [HomeComponent, FavoritesComponent],
+  imports: [RouterModule.forChild(routes), ComponentsModule],
   exports: [RouterModule],
 })
 export class PagesModule {}
