@@ -1,8 +1,14 @@
 .navbar {
-  height: var(--header-height);
   padding: 12px 24px;
   background-color: var(--color-core-foreground) !important;
   border-bottom: 1px solid var(--color-core-border);
+  height: var(--header-height);
+  display: flex;
+  flex-shrink: 1;
+
+  .nav-wrapper{
+    max-width: 1830px;
+  }
 
   * {
     font-weight: var(--font-weight-600);

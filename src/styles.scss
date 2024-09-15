@@ -49,6 +49,11 @@
   --page-height: calc(100vh - var(--header-height));
 }
 
+html {
+  min-height: 100vh;
+  background-color: var(--color-core-background);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +67,6 @@ body {
   font-family: Arial, sans-serif;
   color: #333;
   background-color: #fff;
-  min-height: 100vh;
 }
 
 /* Remove as decorações padrão de links */

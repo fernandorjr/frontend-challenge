@@ -1,6 +1,6 @@
 .container-fluid {
   display: flex;
   flex-direction: column;
-  min-height: var(--page-height);
   background-color: var(--color-core-background);
+  min-height: var(--page-height);
 }
