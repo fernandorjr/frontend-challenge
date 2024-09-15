@@ -1,10 +1,54 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Character, PageInfos } from 'src/app/models/character.model';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  charactersList: Character[] = [];
+  pageInfo: PageInfos | null = null;
 
+  currentPage = 1;
+  isLoading = false;
+
+  constructor(private api: ApiService) {
+    this.loadCharacters();
+  }
+
+  ngOnInit(): void {}
+
+  loadCharacters(url?: string): void {
+    if (this.isLoading) return;
+
+    this.isLoading = true;
+
+    this.api.getAllCharecter(url).subscribe(
+      (response) => {
+        this.pageInfo = response.info;
+        this.charactersList = [...this.charactersList, ...response.results];
+
+        this.isLoading = false;
+      },
+      (error) => {
+        this.isLoading = false;
+      }
+    );
+  }
+
+  characterFilers(name: string) {
+    this.api.getCharacterByName(name).subscribe((data: any) => {
+      this.pageInfo = data.info;
+      this.charactersList = data.results;
+    });
+  }
+
+  handleLoadNextPage(): void {
+    if (!this.isLoading && this.pageInfo?.next) {
+      this.currentPage++;
+      this.loadCharacters(this.pageInfo.next);
+    }
+  }
 }

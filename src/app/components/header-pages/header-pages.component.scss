@@ -9,38 +9,33 @@
     font-weight: var(--font-weight-400);
   }
 
-  .floating-label {
-    position: relative;
+  .form-control {
+    border: 1px solid var(--color-neutral-border-high);
+    padding: 13px var(--spacing-m) 13px var(--spacing-m);
+    font-size: 16px;
+    background-color: transparent;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: var(--border-radius-s);
+    color: var(--color-neutral-content-high);
 
-    .form-control {
-      border: 1px solid var(--color-neutral-border-high);
-      padding: 13px var(--spacing-m) 13px var(--spacing-m);
-      font-size: 1rem;
-      background-color: transparent;
-      box-shadow: none;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      border-radius: var(--border-radius-s);
-      color: var(--color-neutral-content-high);
-
-      &:not(:placeholder-shown) + label,
-      &:focus + label {
-        transform: translateY(-1.4rem);
-        font-size: 12px;
-      }
+    &:not(:placeholder-shown)+label,
+    &:focus+label {
+      transform: translateY(-1.4rem);
+      font-size: 12px;
     }
+  }
 
-    label {
-      position: absolute;
-      top: 0.85rem;
-      left: 0.75rem;
-      font-size: 16px;
-      transition: 0.3s ease;
-      background-color: var(--color-core-background);
-      padding: 0 0.25rem;
-      pointer-events: none;
-      color: var(--color-neutral-content-high);
-      font-weight: var(--font-weight-400);
-    }
+  label {
+    top: 0.85rem;
+    left: 0.75rem;
+    font-size: 16px;
+    transition: 0.3s ease;
+    background-color: var(--color-core-background);
+    padding: 0 0.25rem;
+    pointer-events: none;
+    color: var(--color-neutral-content-high);
+    font-weight: var(--font-weight-400);
   }
 
 }

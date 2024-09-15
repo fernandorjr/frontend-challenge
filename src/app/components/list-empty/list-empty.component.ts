@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-empty',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-empty.component.scss']
 })
 export class ListEmptyComponent {
+
+  @Input() title: string = "";
+  @Input() subtitle: string = "";
+  @Input() buttonHome: boolean = false;
 
 }

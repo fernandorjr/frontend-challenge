@@ -1,0 +1,6 @@
+<div
+  class="container col-lg-9 d-flex flex-wrap gap-4 justify-content-center align-items-center overflow-auto"
+  (scroll)="onScroll($event)"
+>
+  <app-card-character *ngFor="let character of charactersList" [character]="character"/>
+</div>

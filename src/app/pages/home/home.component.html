@@ -1,2 +1,26 @@
 <app-header-pages title="Início" [inptFilter]="true"></app-header-pages>
-<app-list-empty />
+
+<div *ngIf="isLoading && currentPage == 1; else content">
+  <!-- Componente de Loading (pode ser um spinner, texto ou qualquer outro indicativo de carregamento) -->
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-light" role="status">
+      <span class="visually-hidden text-white">Carregando...</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #content>
+  <div *ngIf="charactersList.length > 0; else noResults">
+    <app-list-characters
+      [charactersList]="charactersList"
+      (loadNextPage)="handleLoadNextPage()"
+    />
+  </div>
+
+  <ng-template #noResults>
+    <app-list-empty
+      title="Nada foi encontrado"
+      subtitle="Tente realizar uma nova busca."
+    />
+  </ng-template>
+</ng-template>

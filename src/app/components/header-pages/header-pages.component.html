@@ -1,8 +1,8 @@
 <div class="header-page d-flex flex-wrap justify-content-between align-items-center">
-  <h1 class="col-12 col-sm-3"> {{ title }}</h1>
+  <h1 class="col-12 col-sm-3 text-center text-sm-start"> {{ title }}</h1>
 
-  <div class="form-group floating-label col-12 col-sm-6 col-md-5 col-lg-3" *ngIf="inptFilter">
+  <div class="form-group floating-label position-relative col-12 col-sm-6 col-md-5 col-lg-3" *ngIf="inptFilter">
     <input type="text" class="form-control" id="floatingInput" placeholder=" " />
-    <label for="floatingInput">Pesquisar</label>
+    <label for="floatingInput" class="position-absolute">Pesquisar</label>
   </div>
 </div>

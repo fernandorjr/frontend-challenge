@@ -1,0 +1,30 @@
+.container {
+  margin-top: 40px;
+  height: 72vh;
+
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-neutral-border-high);
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-neutral-border-high);
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neutral-border-high) transparent;
+}

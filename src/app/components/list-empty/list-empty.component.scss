@@ -1,5 +1,18 @@
 .container {
   margin-top: 48px;
   background-color: var(--color-core-foreground);
+  gap: 16px;
   height: 60vh;
+
+  h2 {
+    font-size: 24px;
+    font-weight: var(--font-weight-700);
+    color: var(--color-core-content);
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: var(--font-weight-400);
+    color: var(--color-core-content-low);
+  }
 }

@@ -6,11 +6,20 @@
   --color-core-foreground: #0A0A0A;
   --color-core-background: #1F1F1F;
   --color-core-border: #3D3D3D;
-  --color-neutral-content-onSource: #0A0A0A;
+  --color-core-content: #FAFAFA;
+  --color-core-content-low: #3D3D3D;
+
+  --color-neutral-surface: #FFFFFF;
   --color-neutral-content-high: #CACACA;
   --color-neutral-content: #A4A4A4;
-  --color-neutral-surface: #FFFFFF;
   --color-neutral-border-high: #5D5D5D;
+  --color-neutral-content-onSource: #0A0A0A;
+
+  --elevation-s: 0 2px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.12);
+  --elevation-m: 0 4px 6px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.12);
+  --elevation-l: 0 8px 20px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.12);
+  --elevation-xl: 0 12px 28px rgba(0,0,0,0.12), 0 6px 10px rgba(0,0,0,0.08);
+  --elevation-xxl: 0 12px 40px rgba(0,0,0,0.16), 0 8px 12px rgba(0,0,0,0.12);
 
   --sizing-xxxs: 14px;
   --sizing-xxs: 16px;
