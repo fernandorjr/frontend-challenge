@@ -4,13 +4,10 @@
   <div
     class="w-100 h-100 d-flex justify-content-between align-items-center nav-wrapper"
   >
-    <img
-      class="navbar-brand"
-      routerLink="/"
-      src="./assets/imgs/logo.png"
-    />
+    <img class="navbar-brand" routerLink="/" src="./assets/imgs/logo.png" />
 
-    <div class="btn-group" role="group">
+    <!-- Btn-group that shows only on larger screens -->
+    <div class="btn-group d-none d-lg-flex" role="group">
       <button
         type="button"
         class="btn btn-outline-primary d-flex align-items-center gap-2"
@@ -39,5 +36,73 @@
         >
       </button>
     </div>
+
+    <!-- Hamburger menu button for small screens -->
+    <button
+      class="navbar-toggler d-lg-none btn-menu-collapse"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasMenu"
+      aria-controls="offcanvasMenu"
+    >
+      <i class="bi bi-list"></i>
+    </button>
   </div>
 </nav>
+
+<!-- Offcanvas menu -->
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasMenu"
+  aria-labelledby="offcanvasMenuLabel"
+>
+  <div class="offcanvas-header">
+    <img
+      class="offcanvas-title"
+      id="offcanvasMenuLabel"
+      routerLink="/"
+      src="./assets/imgs/logo.png"
+    />
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div
+    class="offcanvas-body d-flex flex-column justify-content-start gap-4"
+    style="height: 100vh"
+  >
+    <button
+      type="button"
+      class="btn btn-outline-primary d-flex align-items-center gap-2"
+      [routerLink]="['/']"
+      [ngClass]="{ 'is-active': isActive('/') }"
+      data-bs-dismiss="offcanvas"
+    >
+      <i
+        [class]="isActive('/') ? 'bi bi-house-door-fill' : 'bi bi-house-door'"
+      ></i>
+      <span>Início</span>
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-primary d-flex align-items-center gap-2"
+      [routerLink]="['/favorites']"
+      [ngClass]="{ 'is-active': isActive('/favorites') }"
+      data-bs-dismiss="offcanvas"
+    >
+      <i
+        [class]="isActive('/favorites') ? 'bi bi-heart-fill' : 'bi bi-heart'"
+      ></i>
+      <span>Favoritos</span>
+      <span
+        class="badge rounded-circle"
+        [ngClass]="{ 'is-active': isActive('/favorites') }"
+        >{{ favoritesCount$ | async }}</span
+      >
+    </button>
+  </div>
+</div>
