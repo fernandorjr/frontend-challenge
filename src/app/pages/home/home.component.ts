@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
 
   handleSearch(name: string) {
     if (name === '') {
+      this.charactersList = [];
       this.loadCharacters();
       return;
     }
