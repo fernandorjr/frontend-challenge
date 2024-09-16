@@ -1,0 +1,25 @@
+{
+  "NAVBAR": {
+    "HOME": "Início",
+    "FAVORITES": "Favoritos"
+  },
+  "HEADER-PAGE": {
+    "HOME": "Início",
+    "FAVORITES": "Favoritos",
+    "SEARCH": "Pesquisar",
+    "CLEAR-FAVORITES": "Limpar Favoritos"
+  },
+  "LIST-EMPTY": {
+    "HOME": {
+      "MESSAGE": "Nada foi encontrado",
+      "SUB-MESSAGE": "Tente realizar uma nova busca"
+    },
+    "FAVORITES": {
+      "MESSAGE": "Parece que você ainda não tem favoritos",
+      "SUB-MESSAGE": "Volte à página inicial e escolha os melhores para você.",
+      "GO-HOME-BUTTON": "Voltar para início"
+    },
+
+    "LOADING": "Carregando..."
+  }
+}
