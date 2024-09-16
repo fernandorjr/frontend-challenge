@@ -1,0 +1,18 @@
+<div class="btn-group" role="group" aria-label="Language switch">
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    [ngClass]="{ active: (currentLang | async) === 'pt' }"
+    (click)="toggleLanguage()"
+  >
+    BR
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    [ngClass]="{ active: (currentLang | async) === 'en' }"
+    (click)="toggleLanguage()"
+  >
+    EN
+  </button>
+</div>

@@ -3,4 +3,5 @@ export const environment = {
   baseHref: '/frontend-challenge/',
   apiBaseUrl: 'https://rickandmortyapi.com/api',
   favoritesKeyLocalStorage: 'favorites',
+  languageKeyLocalStorage: 'language',
 };

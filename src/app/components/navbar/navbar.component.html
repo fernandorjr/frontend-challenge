@@ -4,37 +4,47 @@
   <div
     class="w-100 h-100 d-flex justify-content-between align-items-center nav-wrapper"
   >
+    <!-- <button class="btn btn-primary" (click)="changeLanguage('pt')">pt</button>
+    <button class="btn btn-secondary" (click)="changeLanguage('en')">en</button> -->
+
     <img class="navbar-brand" routerLink="/" src="./assets/imgs/logo.png" />
 
-    <!-- Btn-group that shows only on larger screens -->
-    <div class="btn-group d-none d-lg-flex" role="group">
-      <button
-        type="button"
-        class="btn btn-outline-primary d-flex align-items-center gap-2"
-        [routerLink]="['/']"
-        [ngClass]="{ 'is-active': isActive('/') }"
-      >
-        <i
-          [class]="isActive('/') ? 'bi bi-house-door-fill' : 'bi bi-house-door'"
-        ></i>
-        <span>Início</span>
-      </button>
-      <button
-        type="button"
-        class="btn btn-outline-primary d-flex align-items-center gap-2"
-        [routerLink]="['/favorites']"
-        [ngClass]="{ 'is-active': isActive('/favorites') }"
-      >
-        <i
-          [class]="isActive('/favorites') ? 'bi bi-heart-fill' : 'bi bi-heart'"
-        ></i>
-        <span>Favoritos</span>
-        <span
-          class="badge rounded-circle"
-          [ngClass]="{ 'is-active': isActive('/favorites') }"
-          >{{ favoritesCount$ | async }}</span
+    <div class="btn-group d-none d-lg-flex gap-5" role="group">
+      <app-language-switch />
+
+      <div class="d-none d-lg-flex">
+        <button
+          type="button"
+          class="btn btn-outline-primary d-flex align-items-center gap-2"
+          [routerLink]="['/']"
+          [ngClass]="{ 'is-active': isActive('/') }"
         >
-      </button>
+          <i
+            [class]="
+              isActive('/') ? 'bi bi-house-door-fill' : 'bi bi-house-door'
+            "
+          ></i>
+          <span>{{ "NAVBAR.HOME" | translate }}</span>
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-primary d-flex align-items-center gap-2"
+          [routerLink]="['/favorites']"
+          [ngClass]="{ 'is-active': isActive('/favorites') }"
+        >
+          <i
+            [class]="
+              isActive('/favorites') ? 'bi bi-heart-fill' : 'bi bi-heart'
+            "
+          ></i>
+          <span>{{ "NAVBAR.FAVORITES" | translate }}</span>
+          <span
+            class="badge rounded-circle"
+            [ngClass]="{ 'is-active': isActive('/favorites') }"
+            >{{ favoritesCount$ | async }}</span
+          >
+        </button>
+      </div>
     </div>
 
     <!-- Hamburger menu button for small screens -->
@@ -75,6 +85,8 @@
     class="offcanvas-body d-flex flex-column justify-content-start gap-4"
     style="height: 100vh"
   >
+    <app-language-switch />
+
     <button
       type="button"
       class="btn btn-outline-primary d-flex align-items-center gap-2"
@@ -85,7 +97,7 @@
       <i
         [class]="isActive('/') ? 'bi bi-house-door-fill' : 'bi bi-house-door'"
       ></i>
-      <span>Início</span>
+      <span>{{ "NAVBAR.HOME" | translate }}</span>
     </button>
     <button
       type="button"
@@ -97,7 +109,7 @@
       <i
         [class]="isActive('/favorites') ? 'bi bi-heart-fill' : 'bi bi-heart'"
       ></i>
-      <span>Favoritos</span>
+      <span>{{ "NAVBAR.FAVORITES" | translate }}</span>
       <span
         class="badge rounded-circle"
         [ngClass]="{ 'is-active': isActive('/favorites') }"

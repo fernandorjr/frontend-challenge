@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map, Observable } from 'rxjs';
+import { Language } from 'src/app/models/languages.model';
 import { FavoritesService } from 'src/app/services/states/favorites/favorites.service';
+import { LanguageService } from 'src/app/services/states/language/language.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +17,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private favoritesService: FavoritesService
+    private favoritesService: FavoritesService,
+    private languageService: LanguageService,
   ) {
     this.favoritesCount$ = this.favoritesService.favorites$.pipe(
       map((favorites) => favorites.length)
@@ -32,5 +35,9 @@ export class NavbarComponent implements OnInit {
 
   isActive(route: string): boolean {
     return this.currentRoute === route;
+  }
+
+  changeLanguage(lang: Language) {
+    this.languageService.setLanguage(lang);
   }
 }

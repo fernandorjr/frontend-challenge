@@ -1,9 +1,9 @@
-<app-header-pages title="Favoritos" [clearFavoritesBtn]="favorites.length > 0"></app-header-pages>
+<app-header-pages [title]="'HEADER-PAGE.FAVORITES' | translate " [clearFavoritesBtn]="favorites.length > 0"></app-header-pages>
 
 <div *ngIf="isLoading; else content">
   <div class="container d-flex justify-content-center align-items-center">
     <div class="spinner-border text-light" role="status">
-      <span class="visually-hidden text-white">Carregando...</span>
+      <span class="visually-hidden text-white">{{ 'LOADGIN' | translate }}</span>
     </div>
   </div>
 </div>
@@ -17,23 +17,9 @@
 
   <ng-template #noResults>
     <app-list-empty
-    title="Parece que você ainda não tem favoritos"
-    subtitle="Volte à página inicial e escolha os melhores para você."
+    [title]="'LIST-EMPTY.FAVORITES.MESSAGE' | translate"
+    [subtitle]="'LIST-EMPTY.FAVORITES.SUB-MESSAGE' | translate"
     [buttonHome]="true"
     />
   </ng-template>
 </ng-template>
-
-<!-- <app-list-empty
-  *ngIf="(favorites$ | async)?.length === 0"
-  title="Parece que você ainda não tem favoritos"
-  subtitle="Volte à página inicial e escolha os melhores para você."
-  [buttonHome]="true"
-/>
-
-<app-list-characters
-  *ngIf="(favorites$ | async) !== undefined"
-  [charactersList]="favoritesList"
-/> -->
-
-

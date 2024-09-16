@@ -1,0 +1,17 @@
+.btn-group {
+  display: flex;
+
+  .btn-outline-primary {
+    border-color: var(--color-neutral-content);
+    color: var(--color-neutral-content);
+
+    &.active {
+      background-color: var(--color-neutral-surface);
+      color: var(--color-neutral-content-onSource);
+    }
+
+    &:hover {
+      background-color: var(--color-core-border);
+    }
+  }
+}

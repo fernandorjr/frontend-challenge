@@ -1,0 +1,25 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "FAVORITES": "Favorites"
+  },
+  "HEADER-PAGE": {
+    "HOME": "Home",
+    "FAVORITES": "Favorites",
+    "SEARCH": "Search",
+    "CLEAR-FAVORITES": "Clear Favorites"
+  },
+  "LIST-EMPTY": {
+    "HOME": {
+      "MESSAGE": "Nothing was found",
+      "SUB-MESSAGE": "Try performing a new search"
+    },
+    "FAVORITES": {
+      "MESSAGE": "It seems that you don't have any favorites yet.",
+      "SUB-MESSAGE": "Go back to the home page and choose the best ones for you.",
+      "GO-HOME-BUTTON": "Go to Home"
+    },
+
+    "LOADING": "Loading..."
+  }
+}
