@@ -16,4 +16,11 @@
     />
     <label for="floatingInput" class="position-absolute">Pesquisar</label>
   </div>
+
+  <app-button
+    *ngIf="clearFavoritesBtn"
+    variant="outline"
+    (click)="(handleClearFavorites())"
+    >Limpar Favoritos</app-button
+  >
 </div>

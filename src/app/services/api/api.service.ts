@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { CharacterResponse, PageInfos } from '../models/character.model';
+import { Character, CharacterResponse, PageInfos } from '../../models/character.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,9 @@ export class ApiService {
 
   getCharacterByName(name: string) {
     return this.httpCliente.get<CharacterResponse>(`${this.baseUrl}/character/?name=${name}`);
+  }
+
+  getFavoritesCharacters(ids: number[]) {
+    return this.httpCliente.get<Character[] | Character>(`${this.baseUrl}/character/${ids}`);
   }
 }

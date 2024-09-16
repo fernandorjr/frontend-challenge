@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FavoritesService } from 'src/app/services/states/favorites/favorites.service';
 
 @Component({
   selector: 'app-header-pages',
@@ -8,10 +9,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class HeaderPagesComponent {
   @Input() title: string = '';
   @Input() inptSearch?: boolean = false;
+  @Input() clearFavoritesBtn?: boolean = false;
 
   @Output() searchCharacter = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(private favoritesService: FavoritesService) {}
+
+  handleClearFavorites(): void {
+    this.favoritesService.clearFavorites();
+  }
 
   onChange(event: Event): void {
     const input = event.target as HTMLInputElement;

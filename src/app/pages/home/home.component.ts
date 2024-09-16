@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Character, PageInfos } from 'src/app/models/character.model';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-home',

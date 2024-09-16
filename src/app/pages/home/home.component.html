@@ -1,7 +1,6 @@
 <app-header-pages title="Início" [inptSearch]="true" (searchCharacter)="handleSearch($event)"></app-header-pages>
 
 <div *ngIf="isLoading && currentPage == 1; else content">
-  <!-- Componente de Loading (pode ser um spinner, texto ou qualquer outro indicativo de carregamento) -->
   <div class="container d-flex justify-content-center align-items-center">
     <div class="spinner-border text-light" role="status">
       <span class="visually-hidden text-white">Carregando...</span>

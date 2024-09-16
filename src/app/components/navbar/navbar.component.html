@@ -1,6 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-  <div class="w-100 h-100 d-flex justify-content-between align-items-center nav-wrapper">
-    <img class="navbar-brand" routerLink="/" src="../../../assets/imgs/logo.png"/>
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light justify-content-center"
+>
+  <div
+    class="w-100 h-100 d-flex justify-content-between align-items-center nav-wrapper"
+  >
+    <img
+      class="navbar-brand"
+      routerLink="/"
+      src="../../../assets/imgs/logo.png"
+    />
 
     <div class="btn-group" role="group">
       <button
@@ -24,7 +32,11 @@
           [class]="isActive('/favorites') ? 'bi bi-heart-fill' : 'bi bi-heart'"
         ></i>
         <span>Favoritos</span>
-        <span class="badge rounded-circle" [ngClass]="{ 'is-active': isActive('/favorites')}">3</span>
+        <span
+          class="badge rounded-circle"
+          [ngClass]="{ 'is-active': isActive('/favorites') }"
+          >{{ favoritesCount$ | async }}</span
+        >
       </button>
     </div>
   </div>
