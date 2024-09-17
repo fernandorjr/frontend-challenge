@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   baseHref: '/',
   apiBaseUrl: 'https://rickandmortyapi.com/api',
   favoritesKeyLocalStorage: 'favorites',

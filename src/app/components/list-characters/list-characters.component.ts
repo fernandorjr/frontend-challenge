@@ -7,7 +7,11 @@ import { Character } from 'src/app/models/character.model';
   styleUrls: ['./list-characters.component.scss'],
 })
 export class ListCharactersComponent {
-  @Input() charactersList: Character[] = [];
+  @Input() list: Character[] = [];
+  @Input() emptyTitle = '';
+  @Input() emptySubtitle = '';
+  @Input() isLoading = false;
+  @Input() buttonHome = false;
 
   @Output() loadNextPage = new EventEmitter();
 

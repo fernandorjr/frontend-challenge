@@ -5,13 +5,17 @@
     border-color: var(--color-neutral-content);
     color: var(--color-neutral-content);
 
+    &:hover {
+      background-color: inherit;
+    }
+
     &.active {
       background-color: var(--color-neutral-surface);
       color: var(--color-neutral-content-onSource);
-    }
 
-    &:hover {
-      background-color: var(--color-core-border);
+      &:hover {
+        background-color: var(--color-neutral-surface);
+      }
     }
   }
 }

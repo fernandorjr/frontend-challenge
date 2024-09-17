@@ -6,13 +6,13 @@
   display: flex;
   flex-shrink: 1;
 
-  .nav-wrapper{
+  .nav-wrapper {
     max-width: 1830px;
 
     .btn-menu-collapse {
       border-color: var(--color-neutral-content);
 
-      .navbar-toggler-icon{
+      .navbar-toggler-icon {
         color: var(--color-neutral-content);
       }
     }
@@ -26,7 +26,6 @@
     font-size: 14px;
     color: var(--color-neutral-content);
   }
-
 }
 
 .badge {
@@ -83,11 +82,10 @@
   }
 }
 
-
 .offcanvas {
   background-color: var(--color-core-background);
 
-  .btn-close{
+  .btn-close {
     filter: invert(100%);
   }
 

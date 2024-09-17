@@ -1,25 +1,12 @@
-<app-header-pages [title]="'HEADER-PAGE.FAVORITES' | translate " [clearFavoritesBtn]="favorites.length > 0"></app-header-pages>
+<app-header-pages
+  [title]="'HEADER-PAGE.FAVORITES' | translate"
+  [clearFavoritesBtn]="favorites.length > 0"
+/>
 
-<div *ngIf="isLoading; else content">
-  <div class="container d-flex justify-content-center align-items-center">
-    <div class="spinner-border text-light" role="status">
-      <span class="visually-hidden text-white">{{ 'LOADGIN' | translate }}</span>
-    </div>
-  </div>
-</div>
-
-<ng-template #content>
-  <div *ngIf="favorites.length > 0; else noResults">
-    <app-list-characters
-      [charactersList]="favoritesList"
-    />
-  </div>
-
-  <ng-template #noResults>
-    <app-list-empty
-    [title]="'LIST-EMPTY.FAVORITES.MESSAGE' | translate"
-    [subtitle]="'LIST-EMPTY.FAVORITES.SUB-MESSAGE' | translate"
-    [buttonHome]="true"
-    />
-  </ng-template>
-</ng-template>
+<app-list-characters
+  [isLoading]="isLoading"
+  [list]="favoritesList"
+  [emptyTitle]="'LIST-EMPTY.FAVORITES.MESSAGE' | translate"
+  [emptySubtitle]="'LIST-EMPTY.FAVORITES.SUB-MESSAGE' | translate"
+  [buttonHome]="true"
+/>

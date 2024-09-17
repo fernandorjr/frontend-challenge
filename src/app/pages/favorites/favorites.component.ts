@@ -38,6 +38,12 @@ export class FavoritesComponent {
   attListFavorites(favorites: number[]): void {
     this.isLoading = true;
 
+    if(favorites.length === 0) {
+      this.favoritesList = [];
+      this.isLoading = false;
+      return;
+    }
+
     this.apiService.getFavoritesCharacters(favorites).subscribe({
       next: (characters) => {
         this.favoritesList = Array.isArray(characters)

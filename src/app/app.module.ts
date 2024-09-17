@@ -9,6 +9,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
+import { environment } from 'src/environments/environment';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,7 +35,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [
+    { provide: 'BASE_URL', useValue: environment.apiBaseUrl },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

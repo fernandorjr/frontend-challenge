@@ -1,6 +1,22 @@
-<div
-  class="container col-lg-9 d-flex flex-wrap gap-4 justify-content-center align-items-center overflow-auto"
-  (scroll)="onScroll($event)"
->
-  <app-card-character *ngFor="let character of charactersList" [character]="character"/>
-</div>
+<app-loading-spinner *ngIf="isLoading; else content" />
+
+<ng-template #content>
+  <div
+    *ngIf="list.length > 0; else noResults"
+    class="container col-lg-9 d-flex flex-wrap gap-4 justify-content-center align-items-center overflow-auto"
+    (scroll)="onScroll($event)"
+  >
+    <app-card-character
+      *ngFor="let character of list"
+      [character]="character"
+    />
+  </div>
+
+  <ng-template #noResults>
+    <app-list-empty
+      [title]="emptyTitle"
+      [subtitle]="emptySubtitle"
+      [buttonHome]="true"
+    />
+  </ng-template>
+</ng-template>

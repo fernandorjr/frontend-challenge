@@ -7,7 +7,7 @@ import { ButtonComponent } from './button/button.component';
 import { ListCharactersComponent } from './list-characters/list-characters.component';
 import { CardCharacterComponent } from './card-character/card-character.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageSwitchComponent } from './language-switch/language-switch.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +16,7 @@ import { LanguageSwitchComponent } from './language-switch/language-switch.compo
     ButtonComponent,
     ListCharactersComponent,
     CardCharacterComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +30,7 @@ import { LanguageSwitchComponent } from './language-switch/language-switch.compo
     ListCharactersComponent,
     CardCharacterComponent,
     TranslateModule,
+    LoadingSpinnerComponent,
   ]
 })
 export class ComponentsModule { }

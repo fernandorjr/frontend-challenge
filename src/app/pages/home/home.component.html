@@ -1,29 +1,13 @@
 <app-header-pages
-[title]="'HEADER-PAGE.HOME' | translate "
+  [title]="'HEADER-PAGE.HOME' | translate"
   [inptSearch]="true"
   (searchCharacter)="handleSearch($event)"
-></app-header-pages>
+/>
 
-<div *ngIf="isLoading && currentPage == 1; else content">
-  <div class="container d-flex justify-content-center align-items-center">
-    <div class="spinner-border text-light" role="status">
-      <span class="visually-hidden text-white">{{ 'LOADGIN' | translate }}</span>
-    </div>
-  </div>
-</div>
-
-<ng-template #content>
-  <div *ngIf="charactersList.length > 0; else noResults">
-    <app-list-characters
-      [charactersList]="charactersList"
-      (loadNextPage)="handleLoadNextPage()"
-    />
-  </div>
-
-  <ng-template #noResults>
-    <app-list-empty
-      [title]="'LIST-EMPTY.HOME.MESSAGE' | translate"
-      [subtitle]="'LIST-EMPTY.HOME.SUB-MESSAGE' | translate"
-    />
-  </ng-template>
-</ng-template>
+<app-list-characters
+  [isLoading]="isLoading"
+  [list]="charactersList"
+  [emptyTitle]="'LIST-EMPTY.HOME.MESSAGE' | translate"
+  [emptySubtitle]="'LIST-EMPTY.HOME.SUB-MESSAGE' | translate"
+  (loadNextPage)="handleLoadNextPage()"
+/>
