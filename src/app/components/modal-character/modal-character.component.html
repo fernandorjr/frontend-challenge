@@ -21,17 +21,17 @@
           </div>
 
           <div class="d-flex flex-column align-items-center align-items-lg-start">
-            <span class="label">Specie</span>
+            <span class="label">{{ 'MODAL.LABELS.SPECIE' | translate }}</span>
             <span class="status">{{ character?.species }}</span>
           </div>
 
           <div class="d-flex flex-column align-items-center align-items-lg-start">
-            <span class="label">Origem</span>
+            <span class="label">{{ 'MODAL.LABELS.ORIGIN' | translate }}</span>
             <span class="status">{{ character?.origin!.name }}</span>
           </div>
 
           <div class="d-flex flex-column align-items-center align-items-lg-start">
-            <span class="label">Localização</span>
+            <span class="label">{{ 'MODAL.LABELS.LOCATION' | translate }}</span>
             <span class="status">{{ character?.location!.name }}</span>
           </div>
         </div>
@@ -39,7 +39,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
+          {{ 'MODAL.CLOSE' | translate }}
         </button>
       </div>
     </div>
