@@ -19,28 +19,26 @@ export class ListCharactersComponent {
   selectedCharacter: Character | null = null;
 
   openModal(character: Character | null) {
-    this.selectedCharacter = character; // Define o personagem atual na modal
+    this.selectedCharacter = character;
 
     const modalEl = document.getElementById('modal-character');
-
     if (modalEl) {
-      // Instancia e abre a modal usando a API do Bootstrap
       const modal = new Modal(modalEl);
       modal.show();
     }
   }
 
   closeModal() {
-    this.selectedCharacter = null; // Fecha a modal
+    this.selectedCharacter = null;
   }
 
   onScroll(event: any): void {
-    const element = event.target;
-
-    const nearBottom = element.scrollHeight - element.scrollTop <= element.clientHeight * 1.5;
-
-    if (nearBottom) {
+    if (this.isNearBottom(event.target)) {
       this.loadNextPage.emit();
     }
+  }
+
+  private isNearBottom(element: any): boolean {
+    return element.scrollHeight - element.scrollTop <= element.clientHeight * 1.5;
   }
 }

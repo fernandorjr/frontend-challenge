@@ -17,6 +17,7 @@ export class CardCharacterComponent {
   openModal(character: Character | null, event: MouseEvent) {
     const targetElement = event.target as HTMLElement;
 
+
     if (
       targetElement.classList.contains('bi-heart') ||
       targetElement.classList.contains('bi-heart-fill')
@@ -42,8 +43,6 @@ export class CardCharacterComponent {
   }
 
   isFavorite(id: number | undefined): boolean {
-    if (!id) return false;
-
-    return this.favoritesService.isFavorite(id);
+    return id ? this.favoritesService.isFavorite(id) : false;
   }
 }
