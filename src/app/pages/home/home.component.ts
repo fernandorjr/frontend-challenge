@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/services/api/api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   charactersList: Character[] = [];
   pageInfo: PageInfos | null = null;
 
@@ -17,8 +17,6 @@ export class HomeComponent implements OnInit {
   constructor(private api: ApiService) {
     this.loadCharacters();
   }
-
-  ngOnInit(): void {}
 
   loadCharacters(url?: string): void {
     if (this.isLoading) return;

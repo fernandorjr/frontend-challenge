@@ -1,4 +1,4 @@
-<app-loading-spinner *ngIf="isLoading; else content" />
+<app-loading-spinner *ngIf="isLoading && list.length === 0; else content" />
 
 <ng-template #content>
   <div
@@ -7,7 +7,7 @@
     (scroll)="onScroll($event)"
   >
     <app-card-character
-      *ngFor="let character of list"
+      *ngFor="let character of list; trackBy: trackById"
       [character]="character"
       (openCharacter)="openModal(character)"
     />
