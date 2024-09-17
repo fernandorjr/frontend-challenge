@@ -9,10 +9,10 @@ import { Character } from 'src/app/models/character.model';
 })
 export class ListCharactersComponent {
   @Input() list: Character[] = [];
-  @Input() emptyTitle = '';
-  @Input() emptySubtitle = '';
-  @Input() isLoading = false;
-  @Input() buttonHome = false;
+  @Input() emptyTitle: string = '';
+  @Input() emptySubtitle: string = '';
+  @Input() isLoading: boolean = false;
+  @Input() buttonHome: boolean = false;
 
   @Output() loadNextPage = new EventEmitter();
 
