@@ -19,7 +19,14 @@
       "SUB-MESSAGE": "Go back to the home page and choose the best ones for you.",
       "GO-HOME-BUTTON": "Go to Home"
     },
-
     "LOADING": "Loading..."
+  },
+  "MODAL": {
+    "LABELS": {
+      "SPECIE": "Specie",
+      "ORIGIN": "Origin",
+      "LOCATION": "Location"
+    },
+    "CLOSE": "Close"
   }
 }

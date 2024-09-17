@@ -19,7 +19,14 @@
       "SUB-MESSAGE": "Volte à página inicial e escolha os melhores para você.",
       "GO-HOME-BUTTON": "Voltar para início"
     },
-
     "LOADING": "Carregando..."
+  },
+  "MODAL": {
+    "LABELS": {
+      "SPECIE": "Espécie",
+      "ORIGIN": "Origem",
+      "LOCATION": "Localização"
+    },
+    "CLOSE": "Fechar"
   }
 }
