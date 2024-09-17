@@ -1,17 +1,17 @@
-<div class="card">
+<div class="card position-relative" (click)="openModal($event)">
   <i
     class="bi bi-heart-fill position-absolute"
     *ngIf="isFavorite(character?.id)"
-    (click)="handleRemoveFavorite(character?.id)"
+    (click)="handleRemoveFavorite(character?.id, $event)"
   ></i>
 
   <i
     class="bi bi-heart position-absolute"
     *ngIf="!isFavorite(character?.id)"
-    (click)="handleAddFavorite(character?.id)"
+    (click)="handleAddFavorite(character?.id, $event)"
   ></i>
 
-  <img [src]="character?.image" class="card-img-top" alt="..." />
+  <img [src]="character?.image" class="card-img-top" />
 
   <div class="card-body">
     <h5
@@ -24,3 +24,4 @@
     <p class="card-text">{{ character?.species }}</p>
   </div>
 </div>
+<app-modal-character />

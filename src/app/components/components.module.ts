@@ -8,6 +8,7 @@ import { ListCharactersComponent } from './list-characters/list-characters.compo
 import { CardCharacterComponent } from './card-character/card-character.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { ModalCharacterComponent } from './modal-character/modal-character.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,9 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     ListCharactersComponent,
     CardCharacterComponent,
     LoadingSpinnerComponent,
+    ModalCharacterComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    TranslateModule.forChild(),
-  ],
+  imports: [CommonModule, RouterModule, TranslateModule.forChild()],
   exports: [
     HeaderPagesComponent,
     ListEmptyComponent,
@@ -31,6 +29,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     CardCharacterComponent,
     TranslateModule,
     LoadingSpinnerComponent,
-  ]
+    ModalCharacterComponent,
+  ],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

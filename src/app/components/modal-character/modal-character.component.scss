@@ -1,0 +1,29 @@
+.modal-content {
+  background-color: var(--color-core-background);
+  color: var(--color-core-content);
+
+  .btn-close {
+    filter: invert(100%);
+  }
+
+  .modal-body {
+
+    .char-name {
+      font-size: var(--sizing-xl);
+      font-weight: var(--font-weight-700);
+      font-family: var(--font-family-creepster);
+    }
+
+    .label {
+      font-size: var(--sizing-xxxs);
+      font-weight: var(--font-weight-700);
+      color: var(--color-neutral-content);
+    }
+
+    .status {
+      font-size: var(--sizing-xxs);
+      font-weight: var(--font-weight-700);
+      color: var(--color-neutral-conten-high);
+    }
+  }
+}
