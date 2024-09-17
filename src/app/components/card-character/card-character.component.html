@@ -1,4 +1,4 @@
-<div class="card position-relative" (click)="openModal($event)">
+<div class="card position-relative" (click)="openModal(character,$event)">
   <i
     class="bi bi-heart-fill position-absolute"
     *ngIf="isFavorite(character?.id)"
@@ -24,4 +24,3 @@
     <p class="card-text">{{ character?.species }}</p>
   </div>
 </div>
-<app-modal-character />

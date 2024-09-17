@@ -9,6 +9,7 @@
     <app-card-character
       *ngFor="let character of list"
       [character]="character"
+      (openCharacter)="openModal(character)"
     />
   </div>
 
@@ -17,6 +18,13 @@
       [title]="emptyTitle"
       [subtitle]="emptySubtitle"
       [buttonHome]="true"
+
     />
   </ng-template>
 </ng-template>
+
+<app-modal-character
+  *ngIf="selectedCharacter"
+  [character]="selectedCharacter"
+  (closeModal)="closeModal()"
+></app-modal-character>

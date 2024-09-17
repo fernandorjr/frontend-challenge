@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Rick Sanches</h5>
+        <h5 class="modal-title"> {{ character?.name! }} </h5>
         <button
           type="button"
           class="btn-close"
@@ -12,27 +12,27 @@
       </div>
 
       <div class="modal-body d-flex flex-column flex-lg-row gap-3">
-        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
+        <img [src]="character?.image" />
 
         <div class="d-flex flex-column gap-3 justify-content-between">
           <div class="d-flex flex-column align-items-center align-items-lg-start">
-            <span class="char-name">rick sanches</span>
-            <span class="status">Alive</span>
+            <span class="char-name">{{ character?.name }}</span>
+            <span class="status">{{ character?.status }}</span>
           </div>
 
           <div class="d-flex flex-column align-items-center align-items-lg-start">
             <span class="label">Specie</span>
-            <span class="status">Human</span>
+            <span class="status">{{ character?.species }}</span>
           </div>
 
           <div class="d-flex flex-column align-items-center align-items-lg-start">
             <span class="label">Origem</span>
-            <span class="status">Earth (C-137)</span>
+            <span class="status">{{ character?.origin!.name }}</span>
           </div>
 
           <div class="d-flex flex-column align-items-center align-items-lg-start">
             <span class="label">Localização</span>
-            <span class="status">Citadel of Ricks</span>
+            <span class="status">{{ character?.location!.name }}</span>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from 'src/app/models/character.model';
 import { FavoritesService } from 'src/app/services/states/favorites/favorites.service';
 import { Modal } from 'bootstrap';
@@ -10,10 +10,11 @@ import { Modal } from 'bootstrap';
 })
 export class CardCharacterComponent {
   @Input() character: Character | null = null;
+  @Output() openCharacter = new EventEmitter<Character | null>();
 
   constructor(private favoritesService: FavoritesService) {}
 
-  openModal(event: MouseEvent) {
+  openModal(character: Character | null, event: MouseEvent) {
     const targetElement = event.target as HTMLElement;
 
     if (
@@ -23,12 +24,7 @@ export class CardCharacterComponent {
       return;
     }
 
-    const modalEl = document.getElementById('modal-character');
-
-    if (modalEl) {
-      const modal = new Modal(modalEl);
-      modal.show();
-    }
+    this.openCharacter.emit(character);
   }
 
   handleAddFavorite(id: number | undefined, event: MouseEvent): void {
