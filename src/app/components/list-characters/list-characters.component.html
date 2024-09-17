@@ -7,7 +7,7 @@
     (scroll)="onScroll($event)"
   >
     <app-card-character
-      *ngFor="let character of list; trackBy: trackById"
+      *ngFor="let character of list;"
       [character]="character"
       (openCharacter)="openModal(character)"
     />
